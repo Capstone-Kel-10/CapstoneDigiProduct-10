@@ -1,15 +1,15 @@
 <?php
-
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
+/* Database credentials */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'skillnest');
-
-function connect() {
-  $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  return $conn;
+ 
+/* Attempt to connect to MySQL database */
+$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+ 
+// Check connection
+if($mysqli === false){
+    die("ERROR: Could not connect. " . $mysqli->connect_error);
 }
 ?>
