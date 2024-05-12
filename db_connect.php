@@ -1,15 +1,12 @@
 <?php
-/* Database credentials */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'skillnest');
- 
-/* Attempt to connect to MySQL database */
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-// Check connection
-if($mysqli === false){
-    die("ERROR: Could not connect. " . $mysqli->connect_error);
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "skillnest";
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
